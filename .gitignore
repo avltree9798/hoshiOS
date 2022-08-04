@@ -1,0 +1,5 @@
+out/*
+init/bin/*
+test
+.DS_Store
+.vscode/
