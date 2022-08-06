@@ -4,6 +4,7 @@
 #include "../include/irq.h"
 #include "../include/uart.h"
 #include "../include/handler.h"
+#include "../include/syscall.h"
 
 void enable_timer(void);
 uint32_t read_timer_status(void);
@@ -66,7 +67,9 @@ void handler(struct TrapFrame* tf) {
                 }
             }
             break;
-
+        case 3:
+            syscall(tf);
+            break;
         default:
             printk("unknown exception\r\n");
             while (1) { }

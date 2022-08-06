@@ -6,6 +6,7 @@
 #include "include/memory.h"
 #include "include/file.h"
 #include "include/process.h"
+#include "include/syscall.h"
 #include<stddef.h>
 
 void KMain(void)
@@ -14,9 +15,9 @@ void KMain(void)
     printk("Hello, Raspberry pi\r\n");
     printk("We are at EL %u\r\n", get_el());
  
-    init_memory();
+    init_memory(); 
+    init_syscall();
     init_fs();
-
     init_timer();
     init_interrupt_controller();
     enable_irq();

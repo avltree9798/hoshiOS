@@ -14,6 +14,7 @@ SECTIONS
     . = ALIGN(16);
     .data : {
         *(.data)
+        . =  ALIGN(8);
     }
 
     .bss : {

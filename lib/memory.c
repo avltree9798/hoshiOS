@@ -175,7 +175,6 @@ void free_vm(uint64_t map) {
 bool setup_uvm(uint64_t map, char* file_name) {
     bool status = false;
     void *page = kalloc();
-
     if (page != NULL) {
         memset(page, 0, PAGE_SIZE);
         status = map_page(map, 0x400000, V2P(page), ENTRY_V | USER | NORMAL_MEMORY | ENTRY_ACCESSED);
